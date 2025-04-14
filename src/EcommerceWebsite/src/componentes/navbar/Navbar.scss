@@ -1,0 +1,41 @@
+@use '../../colors.scss';
+
+.navbar {
+    background-color: colors.$color1;
+
+    .navbar-brand {
+        img {
+            $tamanho: 70px;
+            width: $tamanho;
+            height: $tamanho;
+            border-radius: 50%;
+        }
+    }
+
+    .navbar-toggler {
+        box-shadow: none;
+        border: none;
+
+        .icon {
+            div {
+                width: 35px;
+                height: 5px;
+                background-color: colors.$color2;
+                border-radius: 10px;
+                margin: 7px 0 7px 0;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            text-align: center;
+
+            a {
+                color: colors.$color2;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

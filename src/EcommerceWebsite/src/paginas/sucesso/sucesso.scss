@@ -1,0 +1,41 @@
+@use '../../colors.scss';
+
+.sucesso-pagina {
+    background-color: colors.$colorBackground;
+    min-height: 500px;
+    height: 100svh;
+    .bloco {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, 0px);
+        .containerSVG{
+            position: relative;
+            background-color: colors.$color1;
+            padding: 20px;
+            width: fit-content;
+            height: fit-content;
+            border: 3px solid colors.$color1;
+            border-radius: 50%;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            svg{
+                $tamanho: 120px;
+                width: $tamanho;
+                height: $tamanho;
+                color: colors.$color2;
+            }
+        }
+        p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: colors.$color2;
+            word-wrap: break-word;
+        }
+    }
+}
