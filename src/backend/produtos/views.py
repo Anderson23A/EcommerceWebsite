@@ -27,14 +27,51 @@ class ProdutoView(viewsets.ModelViewSet):
     def list(self, request):
         # ProdutoModel.objects.all().delete()
 
-        # for i in range(5):
-        #     newObj = ProdutoModel.objects.create(
-        #         imagem=rf'imagensProdutos\cpu.png'
-        #     )
-        #     newObj.nome = f'produto-{newObj.id}'
-        #     newObj.preco = 540.05
-        #     newObj.descricao = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer '
-        #     newObj.save()
+        # if len(ProdutoModel.objects.all()) <= 0:
+        #     produtos = [
+        #         {
+        #             "nome": "Laptop TechPro X15",
+        #             "descricao": 'Notebook com tela Full HD de 15,6", processador Intel Core i7 de 12ª geração, 16 GB de RAM e SSD de 512 GB. Ideal para trabalho, estudos e entretenimento.',
+        #             "preco": 4299.00,
+        #             "avaliacao": 5,
+        #             "imagem": r"imagensProdutos\Laptop TechPro X15.png",
+        #         },
+        #         {
+        #             "nome": "Mouse Óptico SpeedClick M200",
+        #             "descricao": "Mouse com sensor óptico de alta precisão, design ergonômico e conexão USB. Compatível com Windows, Mac e Linux.",
+        #             "preco": 59.90,
+        #             "avaliacao": 4,
+        #             "imagem": r"imagensProdutos\Mouse Óptico SpeedClick M200.png",
+        #         },
+        #         {
+        #             "nome": "HD Externo DataStore 2TB USB 3.0",
+        #             "descricao": " Disco rígido externo com 2 TB de capacidade, interface USB 3.0 e compatibilidade com diversos sistemas operacionais. Ideal para backup e armazenamento de grandes volumes de dados.",
+        #             "preco": 389.90,
+        #             "avaliacao": 4,
+        #             "imagem": r"imagensProdutos\HD Externo DataStore 2TB USB 3.0.png",
+        #         },
+        #         {
+        #             "nome": "SSD Raptor X 1TB NVMe",
+        #             "descricao": "Unidade de estado sólido com 1 TB de armazenamento, tecnologia NVMe para alta velocidade de leitura e gravação. Recomendado para games e aplicações pesadas.",
+        #             "preco": 679.00,
+        #             "avaliacao": 4,
+        #             "imagem": r"imagensProdutos\SSD Raptor X 1TB NVMe.png",
+        #         },
+        #         {
+        #             "nome": "Teclado Mecânico IronKeys MK-500",
+        #             "descricao": "Teclado mecânico com iluminação RGB, switches azuis e estrutura reforçada em metal. Indicado para digitação intensa e jogos.",
+        #             "preco": 299.00,
+        #             "avaliacao": 4,
+        #             "imagem": r"imagensProdutos\Teclado Mecânico IronKeys MK-500.png",
+        #         },
+        #     ]
+        #     for i, produto in enumerate(produtos):
+        #         newObj = ProdutoModel.objects.create(imagem=produto["imagem"])
+        #         newObj.nome = produto["nome"]
+        #         newObj.preco = produto["preco"]
+        #         newObj.descricao = produto["descricao"]
+        #         newObj.avaliacao = produto["avaliacao"]
+        #         newObj.save()
         return super().list(request)
 
     @action(methods=["GET"], detail=False)

@@ -14,7 +14,7 @@ function Produto(props){
     if (real.length >= 4){
         real = `${String(real.slice(0,1))}.${String(real.slice(1))}`
     }
-    const preco = `${real}${(centavos === undefined)?'':','+String(centavos).padEnd('2','0')}`
+    const preco = `${real}${(centavos === undefined)?',00':','+String(centavos).padEnd('2','0')}`
     
     return (
         <div className='produto' onClick={()=>{
@@ -24,7 +24,9 @@ function Produto(props){
                 <img src={detalhes['imagem']} alt="" />
             </div>
             <div className='detalhes'>
-                <p className='nome'>{detalhes['nome']}</p>
+                <div className='nome-container'>
+                    <p className='nome'>{detalhes['nome']}</p>
+                </div>
                 <p className='descricao'>{detalhes['descricao']}</p>
                 <p className='preco'>R$ {preco}</p>
             </div>
@@ -63,7 +65,7 @@ export default function ProdutosPagina() {
         }
         const restoLinha = []
         for (let i=0; i < restoItems; i+=1){
-            let produtoI = produtos[i]
+            let produtoI = produtos[i+itemIndex]
             restoLinha.push(
                 <Col lg key={restoLinha.length}>
                     <Produto detalhes={produtoI}/>

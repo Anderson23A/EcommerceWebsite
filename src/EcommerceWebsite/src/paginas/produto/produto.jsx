@@ -1,7 +1,6 @@
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
 import { useParams } from 'react-router-dom'
 import './produto.scss'
 import { SetaDireitaSVG, SetaEsquerdaSVG, EstrelaSVG } from '../../assets/svgs'
@@ -26,7 +25,7 @@ export default function ProdutoPagina() {
         if (real.length >= 4) {
             real = `${String(real.slice(0, 1))}.${String(real.slice(1))}`
         }
-        const preco = `${real}${(centavos === undefined) ? '' : ',' + String(centavos).padEnd('2', '0')}`
+        const preco = `${real}${(centavos === undefined) ? ',00' : ',' + String(centavos).padEnd('2', '0')}`
         setProdutoDetalhes({ ...data, precoSTR: preco })
 
     }
