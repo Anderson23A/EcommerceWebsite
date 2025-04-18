@@ -106,7 +106,7 @@ class ProdutoView(viewsets.ModelViewSet):
         try:
             checkout = client.checkout.sessions.create(
                 {
-                    "success_url": "http://localhost:8000/sucesso/",
+                    "success_url": "https://ecommercewebsite-5ew1.onrender.com/sucesso/",
                     "line_items": [
                         {
                             "price_data": {
